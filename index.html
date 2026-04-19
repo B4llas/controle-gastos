@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <title>Dashboard de Gastos</title>
+  <meta charset="UTF-8">
+  <title>Controle de Gastos</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-
   <div class="container">
-
-    <h1>Dashboard Financeiro</h1>
+    <h1>Controle de Gastos</h1>
 
     <div class="inputs">
       <input id="descricao" placeholder="Descrição">
@@ -23,36 +22,26 @@
         <option>Outros</option>
       </select>
 
-      <input type="date" id="data">
+      <input id="data" type="date">
 
-      <button onclick="adicionarGasto()">Adicionar</button>
+      <button onclick="adicionar()">Adicionar</button>
     </div>
-
-    <h2 id="total">Total: R$ 0</h2>
 
     <div class="filtros">
-      <input type="month" id="mesInicio">
-      <input type="month" id="mesFim">
-      <button onclick="filtrarPeriodo()">Comparar períodos</button>
+      <input type="month" id="mesFiltro">
+      <button onclick="filtrarMes()">Filtrar mês</button>
+      <button onclick="resetFiltro()">Reset</button>
     </div>
+
+    <h2 id="resumo"></h2>
 
     <ul id="lista"></ul>
 
-    <div class="botoes">
-      <button onclick="trocarGrafico('pie')">Pizza</button>
-      <button onclick="trocarGrafico('bar')">Barras</button>
-    </div>
-
-    <canvas id="grafico"></canvas>
-
+    <canvas id="graficoPizza"></canvas>
+    <canvas id="graficoBarra"></canvas>
+    <canvas id="graficoLinha"></canvas>
   </div>
 
-  <!-- Módulos JS -->
-  <script src="js/data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/charts.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/app.js"></script>
-
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>

@@ -1,35 +1,27 @@
-function renderizar(lista = gastos) {
-  const ul = document.getElementById("lista");
-  const totalEl = document.getElementById("total");
+export function renderizar(lista, gastos, remover, editar) {
+  lista.innerHTML = "";
 
-  ul.innerHTML = "";
-
-  let total = 0;
-  let porCategoria = {};
-  let porMes = {};
-
-  lista.forEach((g, i) => {
-    total += g.valor;
-
-    porCategoria[g.categoria] = (porCategoria[g.categoria] || 0) + g.valor;
-
-    const mes = g.data?.slice(0, 7);
-    porMes[mes] = (porMes[mes] || 0) + g.valor;
-
+  gastos.forEach((g, i) => {
     const li = document.createElement("li");
 
     li.innerHTML = `
-      <span>${g.descricao} | ${g.categoria} | R$ ${g.valor} | ${g.data}</span>
-      <div>
-        <button onclick="editar(${i})">Editar</button>
-        <button onclick="remover(${i})">X</button>
-      </div>
+      ${g.descricao} | ${g.categoria} | R$ ${g.valor} | ${g.data}
     `;
 
-    ul.appendChild(li);
+    const div = document.createElement("div");
+
+    const b1 = document.createElement("button");
+    b1.innerText = "Editar";
+    b1.onclick = () => editar(i);
+
+    const b2 = document.createElement("button");
+    b2.innerText = "X";
+    b2.onclick = () => remover(i);
+
+    div.appendChild(b1);
+    div.appendChild(b2);
+
+    li.appendChild(div);
+    lista.appendChild(li);
   });
-
-  totalEl.innerText = "Total: R$ " + total;
-
-  atualizarGraficos(porCategoria, porMes);
 }

@@ -1,16 +1,34 @@
-function atualizarGraficos(categorias, meses) {
-  const ctx = document.getElementById("grafico").getContext("2d");
+let pizza, barra, linha;
 
-  if (grafico) grafico.destroy();
+export function atualizarGraficos(dados) {
+  const labels = Object.keys(dados);
+  const values = Object.values(dados);
 
-  grafico = new Chart(ctx, {
-    type: tipoGrafico,
+  if (pizza) pizza.destroy();
+  if (barra) barra.destroy();
+  if (linha) linha.destroy();
+
+  pizza = new Chart(document.getElementById("graficoPizza"), {
+    type: "pie",
     data: {
-      labels: Object.keys(categorias),
-      datasets: [{
-        label: "Gastos",
-        data: Object.values(categorias)
-      }]
+      labels,
+      datasets: [{ data: values }]
+    }
+  });
+
+  barra = new Chart(document.getElementById("graficoBarra"), {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{ data: values }]
+    }
+  });
+
+  linha = new Chart(document.getElementById("graficoLinha"), {
+    type: "line",
+    data: {
+      labels,
+      datasets: [{ data: values }]
     }
   });
 }
