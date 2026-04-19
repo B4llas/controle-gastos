@@ -1,0 +1,30 @@
+body {
+  font-family: Arial;
+  background: #1e1e2f;
+  margin: 0;
+  padding: 20px;
+  color: white;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.inputs, .filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input, select, button {
+  padding: 10px;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  background: #2c2c3e;
+  margin: 5px 0;
+  padding: 10px;
+}
