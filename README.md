@@ -2,7 +2,7 @@
 
 
 
-\# 💰 Controle de Gastos
+Controle de Gastos
 
 
 
@@ -10,21 +10,17 @@ Aplicação web para controle financeiro pessoal com visualização de dados e o
 
 
 
-\---
 
 
-
-\## 🔗 Demonstração
+Demonstração
 
 👉 https://b4llas.github.io/controle-gastos/
 
 
 
-\---
 
 
-
-\## 📸 Preview
+Preview
 
 
 
@@ -32,11 +28,9 @@ Aplicação web para controle financeiro pessoal com visualização de dados e o
 
 
 
-\---
 
 
-
-\## ⚙️ Funcionalidades
+Funcionalidades
 
 
 
@@ -56,11 +50,9 @@ Aplicação web para controle financeiro pessoal com visualização de dados e o
 
 
 
-\---
 
 
-
-\## 🧠 Tecnologias
+Tecnologias
 
 
 
@@ -76,11 +68,9 @@ Aplicação web para controle financeiro pessoal com visualização de dados e o
 
 
 
-\---
 
 
-
-\## 📌 Objetivo
+Objetivo
 
 
 
@@ -100,11 +90,9 @@ Projeto desenvolvido para praticar:
 
 
 
-\---
 
 
-
-\## 👨‍💻 Autor
+Autor
 
 
 
